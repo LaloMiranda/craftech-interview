@@ -1,0 +1,17 @@
+##BACKEND
+Se construyo el dockerfile de backend usando como base el video de capacitacion: https://www.youtube.com/watch?v=wdFwjWyF47g&ab_channel=Craftech
+El dockerfile original se hizo usando la version 3.9 de python que tuvo que ser reemplazada por la version 3.7 por errores
+
+Error en dependencias: missing pygraphviz (https://pygraphviz.github.io/documentation/stable/install.html)
+                       missing graphviz (https://graphviz.org/download/)
+                       https://stackoverflow.com/questions/40266604/pip-install-pygraphviz-fails-failed-building-wheel-for-pygraphviz
+
+Error con django: django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
+    Se genero la key: q-qyixa@^d3q#8ix%zg4$*@ftywvtlvfjd+y*1zsmduvs1s^pm
+    Se creo el archivo .env en la carpeta backend
+    Se creo el compose y se seteo la variable de entorno a el archivo .env
+
+##FRONTEND
+Se construyo el dockerfile, el compose fue hecho en base a la documentacion de react
+Hay problemas con versiones deprecadas a la hora de hacer el update de npm
+
