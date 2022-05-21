@@ -29,7 +29,7 @@ jobs:
         with:
           context:  ./Prueba_3/
           push: true
-          tags: lalomiranda/nginx-ci:latest, lalomiranda/nginx-ci:${{ github.sha }} #github.sha es una referencia al commit
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-ci:latest, ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-ci:${{ github.sha }} #github.sha es una referencia al commit
 
       - name: Deploy Image
         uses: actions/checkout@v2
