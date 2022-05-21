@@ -1,0 +1,18 @@
+Links útiles para la resolución:
+Base: https://aws.amazon.com/es/getting-started/hands-on/deploy-nodejs-web-app/
+
+BDD relacional: https://aws.amazon.com/es/rds/
+BDD no relacional:  https://aws.amazon.com/es/nosql/
+                    https://aws.amazon.com/es/dynamodb/getting-started/
+
+Mantenimiento: https://aws.amazon.com/es/autoscaling/
+
+"Hosting virtual" de los servicios back/front: https://aws.amazon.com/es/ec2/
+
+Intermediario entre hosting virtual y bdds: https://aws.amazon.com/es/s3/
+
+Distribuidor de carga: https://aws.amazon.com/es/elasticloadbalancing/
+
+Microservicios: https://aws.amazon.com/es/microservices/
+
+VPC: https://www.rackspace.com/es-ar/library/what-is-virtual-private-cloud
