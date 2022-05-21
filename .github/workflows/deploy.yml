@@ -27,7 +27,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: ./Prueba_3
+          context: ./Prueba_3/
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-ci:latest, ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-ci:${{ github.sha }} #github.sha es una referencia al commit
