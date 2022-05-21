@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+  nginx: 
+    container_name: nginx-webserver
+    image: lalomiranda/nginx-ci:latest
+    ports:
+      - "8080:80"

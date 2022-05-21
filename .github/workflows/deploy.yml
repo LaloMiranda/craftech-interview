@@ -1,0 +1,41 @@
+#Referencia: https://github.com/marketplace/actions/build-and-push-docker-images#usage
+name: Integracion continua con github actions
+
+on:
+  push:
+    branches:
+      - 'feat-prueba_3'
+    paths:
+      - 'Prueba_3/html/index.html'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context:  ./Prueba_3/
+          push: true
+          tags: lalomiranda/nginx-ci:latest, lalomiranda/nginx-ci:${{ github.sha }} #github.sha es una referencia al commit
+
+      - name: Deploy Image
+        uses: actions/checkout@v2
+
+      - name: Construct the compose
+        run: docker-compose -f ./Test3/docker-compose.yml up -d
+
+      - name: Test
+        run: curl localhost:8080
