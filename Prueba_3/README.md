@@ -15,3 +15,28 @@ La solución al ejercicio debe mostrarnos que usted puede:
 Automatizar la parte del proceso de despliegue.
 usar conceptos de CI para aprovisionar el software necesario para que los entregables se ejecuten
 use cualquier herramienta de CI de su elección para implementar el entregable
+
+***
+
+## Resolución
+
+### Dockerizacion de nginx
+Cree una Dockerfile a partir de la imágen ofical nginx. Además cree una carpeta llamada "html" con el archivo "index.html" que va a hacer el **trigger** del flujo de github actions.
+
+### Pasos realizados
+Utilicé github actions ya que entrega debe ser realizada en un repositorio en github.
+
+1. Cree una cuenta de Dockerhub.
+2. Ingrese las credenciales como secretos en el repositorio a trabajar.
+3. Cree el archivo "deploy.yml" dentro de la carpeta ".github/workflows"
+4. Solución de problemas varios a la hora de hacer el proceso de CI. (Principalmente problemas de referencia)
+
+***
+## Test
+Para realizar un test para el workflow de integración continua:
+1. Colocarse dentro de la rama *feat-prueba_3*
+2. Modificar el archivo "/Prueba_3/html/index.html"
+3. Realizar un commit bajo el tipo *test*
+4. Realizar un push
+
+Luego ir a la sección *Actions* del repositorio para verificar.
